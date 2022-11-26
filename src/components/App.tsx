@@ -1,3 +1,10 @@
+import '../main.css';
+import { Header } from './layout/Header';
+
 export const App = () => {
-    return <div>hello world</div>;
+    return (
+        <>
+            <Header />
+        </>
+    );
 };
