@@ -1,0 +1,30 @@
+.empty {
+    width: 100%;
+    padding: 64px 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+
+    color: var(--gray-400);
+
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+}
+
+.empty div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    color: var(--gray-300);
+    line-height: 1.4;
+}
+
+
+.empty div span:first-child {
+    font-weight: bold;
+}

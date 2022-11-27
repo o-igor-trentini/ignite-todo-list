@@ -20,7 +20,13 @@ export const Info: FC<InfoProps> = ({ tasks }) => {
 
             <div className={styles.finishedTasks}>
                 Concluídas
-                <Badge counter={finishedTasksCounter} />
+                <Badge
+                    counter={
+                        finishedTasksCounter > 0
+                            ? `${finishedTasksCounter} de ${createdTasksCounter}`
+                            : finishedTasksCounter
+                    }
+                />
             </div>
         </div>
     );
