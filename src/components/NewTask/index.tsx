@@ -1,9 +1,16 @@
 import { PlusCircle } from 'phosphor-react';
 import { FC, FormEvent, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './index.module.css';
 
+export interface Task {
+    id: string;
+    name: string;
+    isActive: boolean;
+}
+
 interface NewTaskProps {
-    onAdd: (task: string) => void;
+    onAdd: (task: Task) => void;
 }
 
 export const NewTask: FC<NewTaskProps> = ({ onAdd }) => {
@@ -12,18 +19,18 @@ export const NewTask: FC<NewTaskProps> = ({ onAdd }) => {
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const task: string = event.currentTarget?.task?.value ?? '';
+        const taskName: string = event.currentTarget?.task?.value ?? '';
 
-        if (!task) return;
+        if (!taskName) return;
 
-        onAdd(task);
+        onAdd({ id: uuidv4(), name: taskName, isActive: true });
         event.currentTarget.reset();
     };
 
     const handleChange = (event: FormEvent<HTMLInputElement>) => {
         event.currentTarget.setCustomValidity('');
 
-        event.currentTarget.value ? setButtonIsDisabled(true) : setButtonIsDisabled(false);
+        event.currentTarget.value ? setButtonIsDisabled(false) : setButtonIsDisabled(true);
     };
 
     return (

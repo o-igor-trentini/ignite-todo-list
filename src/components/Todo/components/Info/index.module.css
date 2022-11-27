@@ -1,0 +1,23 @@
+.info {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info div {
+    font-weight: bold;
+    font-size: 0.875rem;
+
+    display: flex;
+    gap: 8px;
+}
+
+.createdTasks {
+    color: var(--blue);
+}
+
+.finishedTasks {
+    color: var(--purple);
+}
