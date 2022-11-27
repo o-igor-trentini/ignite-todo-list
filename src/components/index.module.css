@@ -12,3 +12,7 @@
 .wrapper div {
     max-width: 40%;
 }
+
+.wrapper div:first-child {
+    margin-top: -1.5625rem;
+}
