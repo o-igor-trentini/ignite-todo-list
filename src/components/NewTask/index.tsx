@@ -34,7 +34,7 @@ export const NewTask: FC<NewTaskProps> = ({ onAdd }) => {
     };
 
     return (
-        <div className={styles.newTask}>
+        <div id="newTask" className={styles.newTask}>
             <form onSubmit={handleSubmit}>
                 <input
                     name="task"

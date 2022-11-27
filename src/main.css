@@ -41,3 +41,7 @@ button {
     font-weight: 400;
     font-size: 1rem;
 }
+
+#newTask {
+    margin-top: -1.5625rem;
+}

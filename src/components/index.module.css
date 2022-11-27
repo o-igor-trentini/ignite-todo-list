@@ -13,6 +13,14 @@
     max-width: 40%;
 }
 
-.wrapper div:first-child {
-    margin-top: -1.5625rem;
+@media (max-width: 1600px) {
+    .wrapper div {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 992px) {
+    .wrapper div {
+        max-width: 90%;
+    }
 }
