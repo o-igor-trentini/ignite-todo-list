@@ -12,7 +12,7 @@ interface TodoProps {
 export const Todo: FC<TodoProps> = ({ tasks }) => {
     return (
         <div className={styles.todo}>
-            <Info />
+            <Info tasks={tasks} />
 
             {tasks.length ? <List tasks={tasks} /> : <Empty />}
         </div>
