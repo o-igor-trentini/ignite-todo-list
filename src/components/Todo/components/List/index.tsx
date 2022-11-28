@@ -7,15 +7,18 @@ import { v4 as uuidV4 } from 'uuid';
 
 interface ListProps {
     tasks: Task[];
-    changeTaskStatus: (taskId: string) => void;
+    onChangeTaskStatus: (taskId: string) => void;
+    onRemoveTask: (taskId: string) => void;
 }
 
-export const List: FC<ListProps> = ({ tasks, changeTaskStatus }) => {
+export const List: FC<ListProps> = ({ tasks, onChangeTaskStatus, onRemoveTask }) => {
     const card = (task: Task): JSX.Element => {
         const checkboxId = uuidV4();
         const taskNameClassName: string | undefined = task.done ? styles.taskDone : undefined;
 
-        const handleChangeTaskStatus = (): void => changeTaskStatus(task.id);
+        const handleChangeTaskStatus = (): void => onChangeTaskStatus(task.id);
+
+        const handleRemoveTask = (): void => onRemoveTask(task.id);
 
         return (
             <div key={task.id} className={styles.card}>
@@ -26,7 +29,7 @@ export const List: FC<ListProps> = ({ tasks, changeTaskStatus }) => {
                     </label>
                 </div>
 
-                <Trash className={styles.deleteTask} />
+                <Trash onClick={handleRemoveTask} className={styles.deleteTask} />
             </div>
         );
     };

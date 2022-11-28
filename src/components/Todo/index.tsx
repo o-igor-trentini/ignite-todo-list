@@ -7,15 +7,20 @@ import styles from './index.module.css';
 
 interface TodoProps {
     tasks: Task[];
-    changeTaskStatus: (taskId: string) => void;
+    onChangeTaskStatus: (taskId: string) => void;
+    onRemoveTask: (taskId: string) => void;
 }
 
-export const Todo: FC<TodoProps> = ({ tasks, changeTaskStatus }) => {
+export const Todo: FC<TodoProps> = ({ tasks, onChangeTaskStatus, onRemoveTask }) => {
     return (
         <div className={styles.todo}>
             <Info tasks={tasks} />
 
-            {tasks.length ? <List tasks={tasks} changeTaskStatus={changeTaskStatus} /> : <Empty />}
+            {tasks.length ? (
+                <List tasks={tasks} onChangeTaskStatus={onChangeTaskStatus} onRemoveTask={onRemoveTask} />
+            ) : (
+                <Empty />
+            )}
         </div>
     );
 };

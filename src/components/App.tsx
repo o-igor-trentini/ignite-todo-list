@@ -21,6 +21,9 @@ export const App = () => {
         setTasks(newState);
     };
 
+    const handleRemoveTask = (taskId: string): void =>
+        setTasks((state) => [...state].filter((item) => item.id !== taskId));
+
     return (
         <>
             <Header />
@@ -28,7 +31,7 @@ export const App = () => {
             <div className={styles.wrapper}>
                 <NewTask onAdd={handleAddNewTask} />
 
-                <Todo tasks={tasks} changeTaskStatus={handleChangeTaskStatus} />
+                <Todo tasks={tasks} onChangeTaskStatus={handleChangeTaskStatus} onRemoveTask={handleRemoveTask} />
             </div>
         </>
     );
