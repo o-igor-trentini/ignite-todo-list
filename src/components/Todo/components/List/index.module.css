@@ -34,7 +34,6 @@
 .cardDescription span {
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .deleteTask {
