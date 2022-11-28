@@ -10,6 +10,17 @@ export const App = () => {
 
     const handleAddNewTask = (task: Task): void => setTasks((state) => [...state, task]);
 
+    const handleChangeTaskStatus = (taskId: string): void => {
+        const taskIndex = tasks.findIndex((item) => item.id === taskId);
+
+        if (taskIndex < 0) return;
+
+        const newState = tasks.slice();
+        newState[taskIndex].done = !newState[taskIndex].done;
+
+        setTasks(newState);
+    };
+
     return (
         <>
             <Header />
@@ -17,7 +28,7 @@ export const App = () => {
             <div className={styles.wrapper}>
                 <NewTask onAdd={handleAddNewTask} />
 
-                <Todo tasks={tasks} />
+                <Todo tasks={tasks} changeTaskStatus={handleChangeTaskStatus} />
             </div>
         </>
     );

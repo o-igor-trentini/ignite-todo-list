@@ -3,22 +3,33 @@ import { FC } from 'react';
 import { Task } from '../../../NewTask';
 import { Checkbox } from '../../../ui/Checkbox';
 import styles from './index.module.css';
+import { v4 as uuidV4 } from 'uuid';
 
 interface ListProps {
     tasks: Task[];
+    changeTaskStatus: (taskId: string) => void;
 }
 
-export const List: FC<ListProps> = ({ tasks }) => {
-    const card = (task: Task): JSX.Element => (
-        <div key={task.id} className={styles.card}>
-            <div className={styles.cardDescription}>
-                <Checkbox />
-                <span>{task.name}</span>
-            </div>
+export const List: FC<ListProps> = ({ tasks, changeTaskStatus }) => {
+    const card = (task: Task): JSX.Element => {
+        const checkboxId = uuidV4();
+        const taskNameClassName: string | undefined = task.done ? styles.taskDone : undefined;
 
-            <Trash onClick={() => alert(`tarefa deletada: ${task.name}`)} className={styles.deleteTask} />
-        </div>
-    );
+        const handleChangeTaskStatus = (): void => changeTaskStatus(task.id);
+
+        return (
+            <div key={task.id} className={styles.card}>
+                <div className={styles.cardDescription}>
+                    <Checkbox id={checkboxId} checked={task.done} onChange={handleChangeTaskStatus} />
+                    <label htmlFor={checkboxId} className={taskNameClassName}>
+                        {task.name}
+                    </label>
+                </div>
+
+                <Trash className={styles.deleteTask} />
+            </div>
+        );
+    };
 
     return <div className={styles.list}>{tasks.map((item) => card(item))}</div>;
 };

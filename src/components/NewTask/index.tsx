@@ -23,7 +23,7 @@ export const NewTask: FC<NewTaskProps> = ({ onAdd }) => {
 
         if (!taskName) return;
 
-        onAdd({ id: uuidv4(), name: taskName, done: true });
+        onAdd({ id: uuidv4(), name: taskName, done: false });
         event.currentTarget.reset();
     };
 

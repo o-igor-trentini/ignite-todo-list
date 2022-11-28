@@ -9,7 +9,7 @@ interface InfoProps {
 
 export const Info: FC<InfoProps> = ({ tasks }) => {
     const createdTasksCounter = tasks.length;
-    const finishedTasksCounter = [...tasks].filter((item) => !item.done).length;
+    const finishedTasksCounter = [...tasks].filter((item) => item.done).length;
 
     return (
         <div className={styles.info}>

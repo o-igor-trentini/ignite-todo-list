@@ -31,9 +31,15 @@
     color: var(--gray-100);
 }
 
-.cardDescription span {
+.cardDescription label {
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 0.875rem;
+}
+
+.taskDone {
+    text-decoration: line-through;
+    color: var(--gray-300);
 }
 
 .deleteTask {
