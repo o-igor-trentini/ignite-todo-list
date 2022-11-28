@@ -3,7 +3,7 @@
     --purple-dark: #5e60ce;
 
     --blue: #4ea8de;
-    --blue-dark: #1e6f9f;
+    --blue-dark: 30, 111, 159; /* #1e6f9f; */
 
     --gray-700: #0d0d0d;
     --gray-600: #1a1a1a;
@@ -30,7 +30,6 @@
 body {
     background: var(--gray-600);
     color: var(--gray-300);
-    transition: background 0.5ms linear;
     -webkit-font-smoothing: antialiased;
 }
 

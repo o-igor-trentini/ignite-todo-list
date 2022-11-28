@@ -51,7 +51,7 @@
     border-radius: 8px;
     border: 0;
 
-    background: var(--blue-dark);
+    background: rgb(var(--blue-dark));
 
     color: var(--gray-100);
     font-weight: bold;
@@ -59,6 +59,7 @@
     line-height: 1.4;
 
     cursor: pointer;
+    transition: all 0.1s ease;
 }
 
 .newTask button:not(:disabled):hover {

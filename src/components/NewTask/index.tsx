@@ -6,7 +6,7 @@ import styles from './index.module.css';
 export interface Task {
     id: string;
     name: string;
-    isActive: boolean;
+    done: boolean;
 }
 
 interface NewTaskProps {
@@ -23,7 +23,7 @@ export const NewTask: FC<NewTaskProps> = ({ onAdd }) => {
 
         if (!taskName) return;
 
-        onAdd({ id: uuidv4(), name: taskName, isActive: true });
+        onAdd({ id: uuidv4(), name: taskName, done: true });
         event.currentTarget.reset();
     };
 
