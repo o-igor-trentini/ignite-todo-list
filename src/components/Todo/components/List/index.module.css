@@ -43,14 +43,20 @@
 }
 
 .deleteTask {
-    min-width: 24px;
-    min-height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     color: var(--gray-300);
+    border-radius: 4px;
     transition: all 0.1s ease;
 }
 
 .deleteTask:hover {
+    background: var(--gray-400);
     color: var(--danger);
     cursor: pointer;
 }

@@ -29,7 +29,9 @@ export const List: FC<ListProps> = ({ tasks, onChangeTaskStatus, onRemoveTask })
                     </label>
                 </div>
 
-                <Trash onClick={handleRemoveTask} className={styles.deleteTask} />
+                <div className={styles.deleteTask}>
+                    <Trash onClick={handleRemoveTask} />
+                </div>
             </div>
         );
     };
