@@ -1,27 +1,40 @@
 # Ignite ToDo List
 
+> O desenvolvimento da aplicação foi baseado na documentação que pode ser encontrada [aqui][].
+
 Este projeto é o primeiro desafio do módulo de ReactJS 2022, uma aplicação que permite adicionar novas tarefas na lista,
 marcá-las/desmarcá-las como feitas e removê-las.
 
 Me veja em funcionamento [clicando aqui][] ***:)***
 
-## Tecnologias
+## Desenvolvimento
 
+### Construído com
+
+- ReactJS
 - Vite
 - Typescript
 - Css Modules
 
-## Instalação
+## Instalando / Começando
+
+Clone este repositório com:
+
+```shell
+git clone git@github.com:o-igor-trentini/ignite-todo-list.git
+```
 
 Use o [npm] para instalar as dependências:
 
-```bash
+```shell
 npm i
 ```
 
-## Briefing
+E use o seguinte comando para iniciar o projeto em modo de desenvolvimento:
 
-O desenvolvimento da aplicação foi construido a partir da documentação que pode ser encontrada [aqui][].
+```shell
+npm run dev
+```
 
 ---
 
