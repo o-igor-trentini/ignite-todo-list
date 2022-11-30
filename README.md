@@ -1,3 +1,5 @@
+<img src="https://drive.google.com/uc?export=view&id=1PsADtFMxZC7ZI6oG6qW-LJ0BoLll6NUN" alt="" width="158" height="58" align="right" />
+
 # Ignite ToDo List
 
 > O desenvolvimento da aplicação foi baseado na documentação que pode ser encontrada [aqui][].
